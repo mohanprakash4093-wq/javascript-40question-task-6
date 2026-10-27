@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 23 - Time Methods</title>
+</head>
+<body>
+    <h2>JavaScript Time Methods</h2>
+
+    <script>
+        let today = new Date();
+
+        let hours = today.getHours();
+        let minutes = today.getMinutes();
+        let seconds = today.getSeconds();
+
+        document.body.innerHTML += "<p>Current Hours: " + hours + "</p>";
+        document.body.innerHTML += "<p>Current Minutes: " + minutes + "</p>";
+        document.body.innerHTML += "<p>Current Seconds: " + seconds + "</p>";
+
+        console.log("Hours:", hours);
+        console.log("Minutes:", minutes);
+        console.log("Seconds:", seconds);
+    </script>
+</body>
+</html>

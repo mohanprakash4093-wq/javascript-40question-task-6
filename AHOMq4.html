@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 4 - Employee Salary Filter</title>
+</head>
+<body>
+    <h2>Question 4: Employee Salary Filter</h2>
+
+    <script>
+        let employees = [
+            { name: "Arun", salary: 250000 },
+            { name: "Priya", salary: 350000 },
+            { name: "Karthik", salary: 300000 },
+            { name: "Divya", salary: 200000 },
+            { name: "Ravi", salary: 400000 }
+        ];
+
+        let result = employees.filter(function(employee) {
+            return employee.salary <= 300000;
+        });
+
+        console.log(result);
+
+        document.body.innerHTML += "<h3>Employees earning ₹300,000 or less:</h3>";
+
+        result.forEach(function(employee) {
+            document.body.innerHTML +=
+                "Name: " + employee.name +
+                " | Salary: ₹" + employee.salary + "<br>";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 10 - sort() Descending</title>
+</head>
+<body>
+    <h2>Question 10: sort() - Descending Order</h2>
+
+    <script>
+        let numbers = [25, 10, 50, 5, 40, 15, 35, 20, 45, 30];
+
+        document.body.innerHTML += "<h3>Original Array:</h3>";
+        document.body.innerHTML += numbers.join(", ");
+
+        numbers.sort((a, b) => b - a);
+
+        console.log(numbers);
+
+        document.body.innerHTML += "<h3>Numbers in Descending Order:</h3>";
+        document.body.innerHTML += numbers.join(", ");
+    </script>
+</body>
+</html>

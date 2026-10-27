@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 39 - Number Analysis</title>
+</head>
+<body>
+    <h2>JavaScript Number Analysis</h2>
+
+    <div id="output"></div>
+
+    <script>
+        let numbers = [10, 15, 20, 25, 30];
+
+        // 1. Multiply each number by 2 using map()
+        let multiplied = numbers.map(function(number) {
+            return number * 2;
+        });
+
+        // 2. Filter even numbers using filter()
+        let evenNumbers = numbers.filter(function(number) {
+            return number % 2 === 0;
+        });
+
+        // 3. Calculate the total using reduce()
+        let total = numbers.reduce(function(sum, number) {
+            return sum + number;
+        }, 0);
+
+        // 4. Check whether at least one number is even
+        let hasEven = numbers.some(function(number) {
+            return number % 2 === 0;
+        });
+
+        // 5. Check whether all numbers are positive
+        let allPositive = numbers.every(function(number) {
+            return number > 0;
+        });
+
+        let output = `
+            <p>Original Numbers: ${numbers.join(", ")}</p>
+            <p>Multiplied by 2: ${multiplied.join(", ")}</p>
+            <p>Even Numbers: ${evenNumbers.join(", ")}</p>
+            <p>Total: ${total}</p>
+            <p>Has an Even Number: ${hasEven}</p>
+            <p>All Numbers Positive: ${allPositive}</p>
+        `;
+
+        document.getElementById("output").innerHTML = output;
+
+        console.log("Original Numbers:", numbers);
+        console.log("Multiplied by 2:", multiplied);
+        console.log("Even Numbers:", evenNumbers);
+        console.log("Total:", total);
+        console.log("Has an Even Number:", hasEven);
+        console.log("All Numbers Positive:", allPositive);
+    </script>
+</body>
+</html>

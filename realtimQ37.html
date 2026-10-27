@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 37 - Map API Products</title>
+</head>
+<body>
+    <h2>Product Titles and Prices</h2>
+
+    <div id="output">Loading products...</div>
+
+    <script>
+        fetch("https://fakestoreapi.com/products")
+            .then(function(response) {
+                if (!response.ok) {
+                    throw new Error("Failed to fetch products");
+                }
+
+                return response.json();
+            })
+            .then(function(products) {
+                let productDetails = products.map(function(product) {
+                    return {
+                        title: product.title,
+                        price: product.price
+                    };
+                });
+
+                let output = "";
+
+                productDetails.forEach(function(product) {
+                    output +=
+                        "<p><strong>Title:</strong> " + product.title +
+                        "<br><strong>Price:</strong> $" + product.price +
+                        "</p><hr>";
+                });
+
+                document.getElementById("output").innerHTML = output;
+
+                console.log(productDetails);
+            })
+            .catch(function(error) {
+                document.getElementById("output").innerHTML =
+                    "Error: " + error.message;
+
+                console.warn(error);
+            });
+    </script>
+</body>
+</html>

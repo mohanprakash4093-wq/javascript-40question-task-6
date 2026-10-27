@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 38 - Filter Products by Category</title>
+</head>
+<body>
+    <h2>Filter Products by Category</h2>
+
+    <div id="output">Loading products...</div>
+
+    <script>
+        fetch("https://fakestoreapi.com/products")
+            .then(function(response) {
+                if (!response.ok) {
+                    throw new Error("Failed to fetch products");
+                }
+
+                return response.json();
+            })
+            .then(function(products) {
+                let selectedCategory = "electronics";
+
+                let filteredProducts = products.filter(function(product) {
+                    return product.category === selectedCategory;
+                });
+
+                let output =
+                    "<h3>Category: " + selectedCategory + "</h3>";
+
+                if (filteredProducts.length === 0) {
+                    output += "<p>No products found.</p>";
+                } else {
+                    filteredProducts.forEach(function(product) {
+                        output +=
+                            "<p><strong>Title:</strong> " + product.title +
+                            "<br><strong>Price:</strong> $" + product.price +
+                            "<br><strong>Category:</strong> " + product.category +
+                            "</p><hr>";
+                    });
+                }
+
+                document.getElementById("output").innerHTML = output;
+
+                console.log(filteredProducts);
+            })
+            .catch(function(error) {
+                document.getElementById("output").innerHTML =
+                    "Error: " + error.message;
+
+                console.warn(error);
+            });
+    </script>
+</body>
+</html>

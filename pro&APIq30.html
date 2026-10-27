@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 30 - Promise Reject</title>
+</head>
+<body>
+    <h2>JavaScript Promise - Reject</h2>
+
+    <p id="output">Checking password...</p>
+
+    <script>
+        let loginPromise = new Promise(function(resolve, reject) {
+            reject("Invalid password");
+        });
+
+        loginPromise
+            .then(function(message) {
+                document.getElementById("output").innerHTML = message;
+            })
+            .catch(function(error) {
+                document.getElementById("output").innerHTML = error;
+                console.log(error);
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 29 - Promise Resolve</title>
+</head>
+<body>
+    <h2>JavaScript Promise - Resolve</h2>
+
+    <p id="output">Processing login...</p>
+
+    <script>
+        let loginPromise = new Promise(function(resolve, reject) {
+            resolve("Login successful");
+        });
+
+        loginPromise.then(function(message) {
+            document.getElementById("output").innerHTML = message;
+            console.log(message);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 9 - sort() Ascending</title>
+</head>
+<body>
+    <h2>Question 9: sort() - Ascending Order</h2>
+
+    <script>
+        let numbers = [50, 10, 40, 20, 30, 90, 70, 60, 80, 100];
+
+        document.body.innerHTML += "<h3>Original Array:</h3>";
+        document.body.innerHTML += numbers.join(", ");
+
+        numbers.sort(function(a, b) {
+            return a - b;
+        });
+
+        console.log(numbers);
+
+        document.body.innerHTML += "<h3>Numbers in Ascending Order:</h3>";
+        document.body.innerHTML += numbers.join(", ");
+    </script>
+</body>
+</html>

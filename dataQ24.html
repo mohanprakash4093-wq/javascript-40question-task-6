@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 24 - Date Setters</title>
+</head>
+<body>
+    <h2>JavaScript Date Setter Methods</h2>
+
+    <script>
+        let today = new Date();
+
+        document.body.innerHTML +=
+            "<p>Original Date: " + today.toDateString() + "</p>";
+
+        today.setFullYear(2003);
+        today.setMonth(0);
+        today.setDate(30);
+
+        document.body.innerHTML +=
+            "<p>Updated Date: " + today.toDateString() + "</p>";
+
+        console.log(today.toDateString());
+    </script>
+</body>
+</html>

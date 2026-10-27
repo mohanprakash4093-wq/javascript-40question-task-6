@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 31 - Promise Finally</title>
+</head>
+<body>
+    <h2>JavaScript Promise - Finally</h2>
+
+    <p id="output">Processing...</p>
+
+    <script>
+        let myPromise = new Promise(function(resolve, reject) {
+            resolve("Operation successful");
+        });
+
+        myPromise
+            .then(function(message) {
+                document.getElementById("output").innerHTML +=
+                    "<br>" + message;
+                console.log(message);
+            })
+            .catch(function(error) {
+                document.getElementById("output").innerHTML +=
+                    "<br>Error: " + error;
+                console.log(error);
+            })
+            .finally(function() {
+                document.getElementById("output").innerHTML +=
+                    "<br>Process completed";
+                console.log("Process completed");
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 7 - some()</title>
+</head>
+<body>
+    <h2>Question 7: some() - Check Even Numbers</h2>
+
+    <script>
+        let numbers = [11, 15, 23, 28, 35, 41];
+
+        let result = numbers.some(function(number) {
+            return number % 2 === 0;
+        });
+
+        console.log(result);
+
+        document.body.innerHTML += "<h3>Original Array:</h3>";
+        document.body.innerHTML += numbers.join(", ");
+
+        document.body.innerHTML += "<h3>Is at least one number even?</h3>";
+        document.body.innerHTML += result;
+    </script>
+</body>
+</html>

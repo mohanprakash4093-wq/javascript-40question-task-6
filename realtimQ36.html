@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 36 - Employee Salary Report</title>
+</head>
+<body>
+    <h2>Employee Salary Report</h2>
+
+    <div id="output"></div>
+
+    <script>
+        let employees = [
+            { name: "Arun", salary: 250000 },
+            { name: "Priya", salary: 350000 },
+            { name: "Karthik", salary: 280000 },
+            { name: "Divya", salary: 200000 },
+            { name: "Ravi", salary: 400000 }
+        ];
+
+        let filteredEmployees = employees.filter(function(employee) {
+            return employee.salary < 300000;
+        });
+
+        let output = "";
+
+        filteredEmployees.forEach(function(employee) {
+            output += "<p>Name: " + employee.name +
+                      ", Salary: ₹" + employee.salary + "</p>";
+        });
+
+        document.getElementById("output").innerHTML = output;
+
+        console.log(filteredEmployees);
+    </script>
+</body>
+</html>

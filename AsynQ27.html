@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 27 - clearInterval()</title>
+</head>
+<body>
+    <h2>JavaScript clearInterval() Method</h2>
+
+    <p id="output">Waiting for messages...</p>
+
+    <script>
+        let count = 0;
+
+        let intervalId = setInterval(function() {
+            count++;
+
+            document.getElementById("output").innerHTML +=
+                "<br>Learning JavaScript - " + count;
+
+            console.log("Learning JavaScript - " + count);
+        }, 2000);
+
+        setTimeout(function() {
+            clearInterval(intervalId);
+
+            document.getElementById("output").innerHTML +=
+                "<br><br>Interval stopped after 8 seconds.";
+
+            console.log("Interval stopped after 8 seconds.");
+        }, 8000);
+    </script>
+</body>
+</html>

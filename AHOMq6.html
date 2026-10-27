@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 6 - reduce()</title>
+</head>
+<body>
+    <h2>Question 6: reduce() - Calculate Total</h2>
+
+    <script>
+        let numbers = [10, 20, 30, 40, 50];
+
+        let total = numbers.reduce(function(sum, number) {
+            return sum + number;
+        }, 0);
+
+        console.log(total);
+
+        document.body.innerHTML += "<h3>Original Array:</h3>";
+        document.body.innerHTML += numbers.join(", ");
+
+        document.body.innerHTML += "<h3>Total of All Numbers:</h3>";
+        document.body.innerHTML += total;
+    </script>
+</body>
+</html>

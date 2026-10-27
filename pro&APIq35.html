@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 35 - Promise Finally</title>
+</head>
+<body>
+    <h2>API Call with Finally</h2>
+
+    <div id="output">Loading products...</div>
+    <p id="status"></p>
+
+    <script>
+        fetch("https://fakestoreapi.com/products")
+            .then(function(response) {
+                if (!response.ok) {
+                    throw new Error("Failed to fetch products");
+                }
+
+                return response.json();
+            })
+            .then(function(products) {
+                let output = "<h3>Product Titles:</h3>";
+
+                products.forEach(function(product) {
+                    output += "<p>" + product.title + "</p>";
+                });
+
+                document.getElementById("output").innerHTML = output;
+            })
+            .catch(function(error) {
+                document.getElementById("output").innerHTML =
+                    "Error: " + error.message;
+
+                console.warn("API Error:", error);
+            })
+            .finally(function() {
+                document.getElementById("status").innerHTML =
+                    "API call completed";
+
+                console.log("API call completed");
+            });
+    </script>
+</body>
+</html>

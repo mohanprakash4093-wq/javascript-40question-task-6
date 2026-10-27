@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 22 - Month Names</title>
+</head>
+<body>
+    <h2>JavaScript Month Names</h2>
+
+    <script>
+        let months = [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+        ];
+
+        let today = new Date();
+        let currentMonth = months[today.getMonth()];
+
+        document.body.innerHTML +=
+            "<p>Current Month: " + currentMonth + "</p>";
+
+        console.log(currentMonth);
+    </script>
+</body>
+</html>

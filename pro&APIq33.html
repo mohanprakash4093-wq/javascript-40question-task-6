@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 33 - Product Details</title>
+</head>
+<body>
+    <h2>Product Details from API</h2>
+
+    <div id="output">Loading products...</div>
+
+    <script>
+        fetch("https://fakestoreapi.com/products")
+            .then(function(response) {
+                if (!response.ok) {
+                    throw new Error("Failed to fetch products");
+                }
+                return response.json();
+            })
+            .then(function(products) {
+                let output = "";
+
+                products.forEach(function(product) {
+                    output +=
+                        "<h3>Title: " + product.title + "</h3>" +
+                        "<p>Price: $" + product.price + "</p>" +
+                        "<p>Category: " + product.category + "</p>" +
+                        "<hr>";
+                });
+
+                document.getElementById("output").innerHTML = output;
+
+                console.log(products);
+            })
+            .catch(function(error) {
+                document.getElementById("output").innerHTML =
+                    "Error: " + error.message;
+
+                console.warn(error);
+            });
+    </script>
+</body>
+</html>
